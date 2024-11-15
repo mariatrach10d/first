@@ -1,0 +1,197 @@
+#include <iostream>
+#include <string>
+#include <limits> // Для очистки ввода
+#include <cstdlib> // Для використання функцій system()
+#include <fstream> // Для роботи з файлами
+
+using namespace std;
+
+
+struct Employee {
+    string name;
+    int id;
+    string position;
+    Employee* next; // вказівник на наступного сотрудника в списку
+};
+
+
+class LinkedList {
+private:
+    Employee* head; // вказівник на початок списку
+public:
+    LinkedList() : head(nullptr) {}
+
+
+    void addEmployee(string name, int id, string position) {
+        Employee* newEmployee = new Employee;
+        newEmployee->name = name;
+        newEmployee->id = id;
+        newEmployee->position = position;
+        newEmployee->next = nullptr;
+
+        if (head == nullptr) {
+            head = newEmployee;
+        } else {
+            Employee* temp = head;
+            while (temp->next != nullptr) {
+                temp = temp->next;
+            }
+            temp->next = newEmployee;
+        }
+    }
+
+
+    void displayEmployees() {
+        Employee* temp = head;
+        while (temp != nullptr) {
+            cout << "Name: " << temp->name << ", ID: " << temp->id << ", Position: " << temp->position << endl;
+            temp = temp->next;
+        }
+    }
+
+
+    void deleteEmployee(int id) {
+        if (head == nullptr) {
+            cout << "List is empty" << endl;
+            return;
+        }
+
+        if (head->id == id) {
+            Employee* temp = head;
+            head = head->next;
+            delete temp;
+            cout << "Employee with ID " << id << " deleted successfully" << endl;
+            return;
+        }
+
+        Employee* prev = nullptr;
+        Employee* curr = head;
+
+        while (curr != nullptr && curr->id != id) {
+            prev = curr;
+            curr = curr->next;
+        }
+
+        if (curr == nullptr) {
+            cout << "Employee with ID " << id << " not found" << endl;
+            return;
+        }
+
+        prev->next = curr->next;
+        delete curr;
+        cout << "Employee with ID " << id << " deleted successfully" << endl;
+    }
+
+
+    Employee* findEmployeeByID(int id) {
+        Employee* temp = head;
+        while (temp != nullptr) {
+            if (temp->id == id) {
+                return temp;
+            }
+            temp = temp->next;
+        }
+        return nullptr;
+    }
+
+    bool employeeExists(int id) {
+        return findEmployeeByID(id) != nullptr;
+    }
+
+    // Очищення списку сотрудників
+    void clear() {
+        while (head != nullptr) {
+            Employee* temp = head;
+            head = head->next;
+            delete temp;
+        }
+        cout << "List cleared" << endl;
+    }
+
+
+    ~LinkedList() {
+        clear();
+    }
+
+
+    void inputEmployeeDataFromKeyboard() {
+        string name, position;
+        int id;
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очищення буфера вводу
+
+        cout << "Enter name of the employee: ";
+        getline(cin, name);
+        cout << "Enter ID of the employee: ";
+        cin >> id;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очищення буфера вводу
+        cout << "Enter position of the employee: ";
+        getline(cin, position);
+
+        addEmployee(name, id, position);
+        cout << "Employee added successfully" << endl;
+    }
+
+
+    void chooseActionForEmployee(int id) {
+        Employee* employee = findEmployeeByID(id);
+        if (employee != nullptr) {
+            int choice;
+            cout << "Choose action for employee " << employee->name << ":" << endl;
+            cout << "1. View details" << endl;
+            cout << "2. Update information" << endl;
+            cout << "3. Delete employee" << endl;
+            cout << "Enter your choice: ";
+            cin >> choice;
+
+            switch (choice) {
+                case 1:
+                    cout << "Details of employee " << employee->name << ":" << endl;
+                    cout << "ID: " << employee->id << ", Position: " << employee->position << endl;
+                    break;
+                case 2:
+                    cout << "Enter new name of the employee: ";
+                    cin.ignore();
+                    getline(cin, employee->name);
+                    cout << "Enter new position of the employee: ";
+                    getline(cin, employee->position);
+                    cout << "Information updated successfully" << endl;
+                    break;
+                case 3:
+                    deleteEmployee(id);
+                    break;
+                default:
+                    cout << "Invalid choice. Please enter a valid option." << endl;
+            }
+        } else {
+            cout << "Employee with ID " << id << " not found" << endl;
+        }
+    }
+};
+
+int main() {
+    LinkedList employees;
+
+    int choice;
+    int id; 
+
+    do {
+        system("clear");
+        cout << "Menu:" << endl;
+        cout << "1. Add Employee" << endl;
+        cout << "2. Display All Employees" << endl;
+        cout << "3. Choose Action for Employee" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Adding Employee:" << endl;
+                employees.inputEmployeeDataFromKeyboard();
+                break;
+            case 2:
+                cout << "All Employees:" << endl;
+                employees.displayEmployees();
+                cout <<
+
