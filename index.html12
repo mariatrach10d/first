@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <section class="contacts">
+        <div class="container">
+            <a href="#"><img src="img/logo.svg" alt=""></a>
+            <div class="line_contacts"></div>
+            <ul class="select_lang">
+                <li><a href="#" class="lang_item">UA</a></li>
+                <li><a href="#" class="lang_item lang_active">RU</a></li>
+            </ul>
+            <div class="line_contacts"></div>
+            <ul class="money">
+                <li><span>USD 28,90</span></li>
+                <li><span>EUR 35,00</span></li>
+            </ul>
+            <div class="line_contacts"></div>
+            <ul class="social">
+                <li><a href="#"><img src="img/fb_icon.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/inst_icon.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/youtube_icon.svg" alt=""></a></li>
+            </ul>
+            <div class="line_contacts"></div>
+            <div class="contact_phone">
+                <ul>
+                    <li><a href="#">044-537-20-07</a></li>
+                    <li><a href="#">068-537-20-07</a></li>
+                </ul>
+                <img src="img/phone.svg" alt="">
+            </div>
+            <div class="line_contacts"></div>
+            <div class="contacts_block">
+                <div class="contacts_block_item check_item">
+                    <span>maistra online</span>
+                    <div class="block_image">
+                        <img src="img/check.svg" alt="">
+                    </div>
+                </div>
+                <div class="contacts_block_item">
+                    <span>туры online</span>
+                    <div class="block_image search_image">
+                        <img src="img/search.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav>
+        <div class="container">
+            <ul class="navigation">
+                <li><a href="#"><img src="img/search_bk.svg" alt=""></a></li>
+                <li><a href="#" class="list_dop">Отели</a></li>
+                <li><a href="#" class="list_dop">Страны</a></li>
+                <li><a href="#" class="list_dop">Авиа</a></li>
+                <li><a href="#">Каталог туров</a></li>
+                <li><a href="#" class="list_dop">Агентам</a></li>
+                <li><a href="#" class="list_dop">О нас</a></li>
+                <li><a href="#">Блог</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="intro">
+        <div class="container">
+            <div class="content">
+                <span>
+                   От 300 € за сутки
+                </span>
+                <h1>новый эко-отель mastila на о. хвар в Хорватии</h1>
+                <div><a href="#" class="button">Подробнее</a></div>
+                <div class="points">
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro_info">
+        <div class="container">
+            <div class="main_info">
+                <h2>ВАШ ТУРОПЕРАТОР ВЫСОКОГО УРОВНЯ ОБСЛУЖИВАНИЯ.</h2>
+                <p> Откройте мир путешествий заново.</p>
+                <div class="list_btn">
+                    <div class="sentence">Что мы предлагаем?</div>
+                    <div class="consultation">Консультация</div>
+                </div>
+            </div>
+            <div class="services">
+                <div>
+                    <img src="img/heart.svg" alt="">
+                    <p>ИНДИВИДУАЛЬНЫЙ ПОДХОД</p>
+                </div>
+                <div>
+                    <img src="img/people.svg" alt="">
+                    <p>КОНСЬЕРЖ-СЕРВИС</p>
+                </div>
+                <div>
+                    <img src="img/star.svg" alt="">
+                    <p>ОТДЫХ ПРЕМИУМ-КЛАССА</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="actual">
+        <div class="container">
+            <div class="title_actual">
+                <h2>Актуальные туры</h2>
+                <div class="line_actual"></div>
+                <div class="all_tours">Все туры</div>
+            </div>
+            <div class="slider">
+                <div class="card">
+                    <div class="card_img">
+                        <img src="img/mandarina.jpg" alt="">
+                        <p>Портонови, Черногория</p>
+                    </div>
+                    <div class="card_body">
+                        <h5>One&Only Portonovi</h5>
+                        <p>первый ультрароскошный курорт One&Only в Европе</p>
+                        <div class="card_line"></div>
+                        <div class="price">
+                            <div class="count_price">
+                                <h5>от 818 €</h5>
+                                <p>за номер в сутки в сезон</p>
+                            </div>
+                            <div class="days">
+                                <p>от 3 ночей</p>
+                                <p>с 01 мая 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
