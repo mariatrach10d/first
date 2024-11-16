@@ -1,0 +1,121 @@
+Car n1 = new Car(-40,20,30);
+Car n2 = new Car(100,20,30);
+Car n3 =new Car(300,20,30);
+Car n4 = new Car(450,20,30);
+void setup(){
+size(1000,1000);
+}
+int i=0;
+int j=-200;
+void draw(){
+  background(204);
+   n1.update();
+   n2.update();
+   n3.update();
+   n4.update();
+  if(i+40<=1000){
+      if(mousePressed==true){
+      i+=random(5);
+      
+      fill(128,64,48);
+  rect(i+22,j+250,50,40);
+  rect(i+3,j+290,90,50);
+  rect(i-10,j+320,15,10);
+  rect(i-97,j+290,90,50);
+  fill(0,191,255);
+  rect(i+40,j+255,30,30);
+
+  
+  fill(0);
+  ellipse(i+15,j+335,30,30);
+  ellipse(i+75,j+335,30,30);
+  
+  triangle(i+94,j+290,i+120,j+315,i+94,j+340);
+
+  
+   ellipse(i-85,j+335,30,30);
+  ellipse(i-25,j+335,30,30);
+
+  rect(i+32,j+220,10,30);
+ fill(128,64,48);
+      ellipse(i-85,j+335,10,10);
+  ellipse(i-25,j+335,10,10);
+    ellipse(i+15,j+335,10,10);
+  ellipse(i+75,j+335,10,10);
+      }
+  i+=random(5);
+  
+  fill(128,64,48);
+  rect(i+22,j+250,50,40);
+  rect(i+3,j+290,90,50);
+  rect(i-10,j+320,15,10);
+  rect(i-97,j+290,90,50);
+  fill(0,191,255);
+  rect(i+40,j+255,30,30);
+
+  
+  fill(0);
+  ellipse(i+15,j+335,30,30);
+  ellipse(i+75,j+335,30,30);
+  
+  triangle(i+94,j+290,i+120,j+315,i+94,j+340);
+
+  
+   ellipse(i-85,j+335,30,30);
+  ellipse(i-25,j+335,30,30);
+
+  rect(i+32,j+220,10,30);
+ fill(128,64,48);
+      ellipse(i-85,j+335,10,10);
+  ellipse(i-25,j+335,10,10);
+    ellipse(i+15,j+335,10,10);
+  ellipse(i+75,j+335,10,10);
+}
+  }
+     class Car{
+     float ypos,xpos,shur;
+     Car(float y,float x,float s){
+       ypos=y;
+       xpos=x;
+       shur=s;
+   }
+   void update(){
+     xpos+=random(5);
+     if(xpos>width){
+       
+     }
+        
+  
+  
+     fill(128,64,48);
+  rect(xpos+22,ypos+250,50,40);
+  rect(xpos+3,ypos+290,90,50);
+  rect(xpos-10,ypos+320,15,10);
+  rect(xpos-97,ypos+290,90,50);
+  fill(0,191,255);
+  rect(xpos+40,ypos+255,30,30);
+
+  
+  fill(0);
+  ellipse(xpos+15,ypos+335,30,30);
+  ellipse(xpos+75,ypos+335,30,30);
+  
+  triangle(xpos+94,ypos+290,xpos+120,ypos+315,xpos+94,ypos+340);
+
+  
+   ellipse(xpos-85,ypos+335,30,30);
+  ellipse(xpos-25,ypos+335,30,30);
+
+  rect(xpos+32,ypos+220,10,30);
+ fill(128,64,48);
+      ellipse(xpos-85,ypos+335,10,10);
+  ellipse(xpos-25,ypos+335,10,10);
+    ellipse(xpos+15,ypos+335,10,10);
+  ellipse(xpos+75,ypos+335,10,10);
+  
+  
+  
+    
+  }
+
+   }
